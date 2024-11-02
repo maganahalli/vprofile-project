@@ -10,7 +10,7 @@ services:
     volumes:
       -  vprodbdata:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD ="vprofilepasswd"
+      - MYSQL_ROOT_PASSWORD =vprofilepasswd
 
   vprocache01:
     image: memcached
@@ -23,11 +23,8 @@ services:
       - "15672:15672"
     environment:
       - RABBITMQ_DEFAULT_USER=guest
-      - RABBITMA_DEFAULT_PASS=guest     
-
-  redis:
-    image: "redis:alpine"    
-
+      - RABBITMQ_DEFAULT_PASS=guest     
+ 
   vproapp:
     build: 
       context: ./Docker-files/app
